@@ -1,0 +1,855 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171217">
+  <meta name="description" content="Luka yang Melahirkan Dendam — novel romantis tentang cinta, pengkhianatan, kehilangan, dan balas dendam.">
+  <title>Luka yang Melahirkan Dendam — Chapter 1</title>
+
+  <style>
+    :root {
+      --bg: #171217;
+      --panel: #211922;
+      --paper: #f0e7df;
+      --muted: #b9aab5;
+      --rose: #d58c9c;
+      --rose2: #f0b9c5;
+      --line: #4a3544;
+      --gold: #d5b88a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--paper);
+      background: radial-gradient(
+        ellipse at top,
+        #382331 0%,
+        var(--bg) 55%
+      );
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.85;
+    }
+
+    .shell {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 0 17px 30px;
+    }
+
+    header {
+      padding: 32px 0 22px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font: 11px/1.5 system-ui, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      line-height: 1.08;
+      margin: 14px 0 12px;
+      font-weight: 500;
+    }
+
+    h1 span {
+      color: var(--rose2);
+      font-style: italic;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 auto;
+      max-width: 470px;
+    }
+
+    .ornament {
+      color: var(--rose);
+      margin: 17px 0 0;
+      letter-spacing: .55em;
+    }
+
+    .cover-note {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 15px 17px;
+      margin: 4px 0 20px;
+      background: #211922b8;
+      color: #d4c4cd;
+      font-size: 13px;
+    }
+
+    .progress-wrap {
+      margin: 0 0 15px;
+      font: 12px system-ui, sans-serif;
+      color: var(--muted);
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .track {
+      height: 4px;
+      background: #493541;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      width: 6.666%;
+      background: linear-gradient(
+        90deg,
+        var(--rose),
+        var(--gold)
+      );
+      transition: width .25s ease;
+    }
+
+    .reader {
+      background: linear-gradient(
+        145deg,
+        #2a2029,
+        #201820
+      );
+      border: 1px solid #493541;
+      border-radius: 18px;
+      padding: 23px 20px 20px;
+      box-shadow: 0 18px 50px #0004;
+    }
+
+    .chapter-label {
+      color: var(--rose2);
+      text-transform: uppercase;
+      letter-spacing: .17em;
+      font: 10px system-ui, sans-serif;
+    }
+
+    h2 {
+      font-size: clamp(1.45rem, 6vw, 2rem);
+      line-height: 1.25;
+      font-weight: 500;
+      margin: 10px 0 19px;
+    }
+
+    .story p {
+      margin: 0 0 1.15em;
+      font-size: 16.5px;
+      color: #f0e7df;
+    }
+
+    .story p.dialog {
+      padding-left: 14px;
+      border-left: 2px solid #9d6478;
+      color: #f5d8df;
+    }
+
+    .story p.scene {
+      text-align: center;
+      color: var(--gold);
+      font-style: italic;
+      font-size: 14px;
+      margin: 1.7em 0;
+    }
+
+    .story p.dropcap:first-letter {
+      float: left;
+      font-size: 3.4em;
+      line-height: .82;
+      padding: 7px 8px 0 0;
+      color: var(--rose2);
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 10px;
+      margin: 16px 0 10px;
+    }
+
+    button {
+      border: 1px solid #654455;
+      border-radius: 12px;
+      padding: 13px 12px;
+      min-height: 48px;
+      font: 600 14px system-ui, sans-serif;
+      cursor: pointer;
+      color: var(--paper);
+      background: #30232e;
+    }
+
+    button.primary {
+      color: #211820;
+      border-color: transparent;
+      background: linear-gradient(
+        110deg,
+        var(--rose2),
+        var(--gold)
+      );
+    }
+
+    button:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+    }
+
+    .page-jump {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 13px 0 20px;
+    }
+
+    .page-jump button {
+      min-height: 36px;
+      min-width: 36px;
+      padding: 5px;
+      border-radius: 9px;
+      font-size: 12px;
+    }
+
+    .page-jump button.active {
+      background: var(--rose2);
+      color: #251923;
+      border-color: var(--rose2);
+    }
+
+    footer {
+      text-align: center;
+      color: #a997a3;
+      font: 11px/1.8 system-ui, sans-serif;
+      padding: 8px 12px 24px;
+    }
+
+    .end-note {
+      color: var(--gold);
+      text-align: center;
+      font-style: italic;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .shell {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .reader {
+        padding: 32px 38px;
+      }
+
+      .story p {
+        font-size: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+
+    <header>
+      <div class="eyebrow">
+        Sebuah novel tentang cinta dan pengkhianatan
+      </div>
+
+      <h1>
+        Luka yang<br>
+        <span>Melahirkan Dendam</span>
+      </h1>
+
+      <p class="subtitle">
+        Ada cinta yang menyelamatkan. Ada cinta yang menghancurkan.
+        Dan ada luka yang mengubah seseorang selamanya.
+      </p>
+
+      <div class="ornament">✦ ❧ ✦</div>
+    </header>
+
+    <div class="cover-note">
+      <strong>CHAPTER 1 · AWAL DARI KEHANCURAN</strong>
+      <br>
+      Kisah fiksi berlatar Indonesia modern. Baca perlahan—
+      beberapa hati tidak hancur dalam satu malam, melainkan
+      sedikit demi sedikit.
+    </div>
+
+    <section class="progress-wrap" aria-label="Progres membaca">
+      <div class="progress-meta">
+        <span id="pageCounter">Halaman 1 dari 15</span>
+        <span id="percent">7% terbaca</span>
+      </div>
+
+      <div class="track">
+        <div class="bar" id="progressBar"></div>
+      </div>
+    </section>
+
+    <article class="reader" aria-live="polite">
+      <div class="chapter-label" id="chapterLabel">
+        Chapter 1 · Halaman 1
+      </div>
+
+      <h2 id="pageTitle">Gadis di Ujung Gang</h2>
+
+      <div class="story" id="story"></div>
+
+      <div class="end-note" id="endNote" hidden>
+        — Bersambung ke Chapter 2 —
+      </div>
+    </article>
+
+    <nav class="controls" aria-label="Navigasi halaman">
+      <button id="prevBtn" type="button">
+        ← Sebelumnya
+      </button>
+
+      <button class="primary" id="nextBtn" type="button">
+        Halaman Selanjutnya →
+      </button>
+    </nav>
+
+    <div class="page-jump" id="pageJump" aria-label="Pilih halaman"></div>
+
+    <footer>
+      LUKA YANG MELAHIRKAN DENDAM · CHAPTER 1
+      <br>
+      Dibuat untuk dibaca nyaman di smartphone · index.html
+    </footer>
+
+  </main>
+
+  <script>
+    const pages = [
+
+      // HALAMAN 1
+      {
+        title: "Gadis di Ujung Gang",
+        paragraphs: [
+          ["dropcap", "Di sebuah gang kecil di pinggiran Bekasi, di antara rumah-rumah berdinding kusam dan kabel listrik yang saling bersilangan, tinggal seorang perempuan bernama Alena Kirana Putri. Usianya dua puluh tiga tahun. Wajahnya begitu cantik hingga orang-orang sering menoleh dua kali saat ia lewat, tetapi kecantikan itu tidak pernah membuat hidupnya menjadi mudah."],
+
+          ["", "Matanya jernih seperti permukaan danau setelah hujan, hidungnya mungil, dan rambut hitamnya selalu jatuh melewati bahu. Namun, di balik penampilan yang sering membuat orang mengira ia berasal dari keluarga berada, Alena menghitung setiap rupiah sebelum membelanjakannya. Ia tinggal bersama ibunya, Bu Ratih, di rumah sederhana yang atap dapurnya bocor setiap musim hujan."],
+
+          ["", "Ayahnya telah meninggal ketika Alena masih duduk di bangku SMA. Sejak itu, ibunya berjualan nasi uduk di depan rumah. Alena membantu sebelum berangkat bekerja sebagai staf administrasi di sebuah perusahaan distribusi di kawasan industri. Gajinya tidak besar, tetapi cukup untuk membayar listrik, membeli obat ibunya, dan menyisihkan sedikit uang untuk mimpi yang belum sempat ia kejar."],
+
+          ["dialog", "“Len, sarapan dulu. Ibu sudah bungkus nasi uduk buat kamu,” panggil Bu Ratih dari dapur."],
+
+          ["dialog", "“Nanti saja, Bu. Kalau berangkat sekarang, aku bisa naik bus yang pertama dan tidak terlambat.”"],
+
+          ["dialog", "“Kamu selalu buru-buru. Jangan sampai mengejar dunia membuatmu lupa menjaga diri sendiri.”"],
+
+          ["", "Alena tersenyum sambil mencium tangan ibunya. “Aku cuma ingin suatu hari Ibu tidak perlu bangun jam tiga pagi lagi.”"],
+
+          ["", "Ia tidak tahu bahwa keinginannya yang sederhana itu kelak akan menjadi alasan sekaligus senjata bagi seseorang untuk menghancurkan hidupnya."]
+        ]
+      },
+
+      // HALAMAN 2
+      {
+        title: "Lelaki di Tengah Hujan",
+        paragraphs: [
+          ["dropcap", "Alena bertemu Raka Mahendra pada suatu Jumat sore, ketika hujan turun begitu deras hingga jalanan berubah menjadi cermin kelabu. Bus yang biasa ia tumpangi terlambat. Ia berdiri di depan minimarket, memeluk tas kainnya sambil berusaha melindungi sepatu kerja dari genangan."],
+
+          ["", "Sebuah mobil hitam berhenti tidak jauh darinya. Seorang lelaki turun, mengenakan kemeja putih dengan lengan digulung dan jam tangan yang mungkin harganya lebih mahal daripada seluruh perabot di rumah Alena. Ia berjalan menuju minimarket, lalu melihat Alena yang menggigil."],
+
+          ["dialog", "“Kamu mau ke mana? Hujannya sepertinya belum akan berhenti.”"],
+
+          ["dialog", "“Ke arah Jatiasih. Tapi saya bisa menunggu bus, kok.”"],
+
+          ["dialog", "“Saya juga ke arah sana. Kalau kamu nyaman, saya bisa mengantar sampai jalan besar. Tidak perlu merasa sungkan.”"],
+
+          ["", "Alena mengamati lelaki itu dengan hati-hati. Ia sudah cukup dewasa untuk tahu bahwa kebaikan orang asing tidak selalu datang tanpa maksud. Raka seolah memahami keraguannya; ia menyebutkan nama, menunjukkan kartu identitas kantor, lalu menawarkan agar Alena mengirim nomor pelat mobilnya kepada teman."],
+
+          ["", "Pada akhirnya Alena menerima tumpangan sampai halte yang lebih ramai. Sepanjang perjalanan, Raka tidak banyak bertanya. Ia hanya menurunkan suhu pendingin udara ketika melihat tangan Alena gemetar dan memberikan sebotol air mineral yang masih tersegel."],
+
+          ["dialog", "“Kamu selalu menolong orang yang kehujanan?” tanya Alena, setengah bercanda."],
+
+          ["dialog", "Raka tertawa kecil. “Tidak. Mungkin hari ini saya cuma kebetulan bertemu seseorang yang terlihat sedang berjuang sendirian.”"],
+
+          ["", "Kalimat itu menetap di kepala Alena lebih lama daripada suara hujan di kaca mobil."]
+        ]
+      },
+
+      // HALAMAN 3
+      {
+        title: "Dua Dunia yang Berbeda",
+        paragraphs: [
+          ["dropcap", "Raka bukan lelaki biasa. Ia adalah putra tunggal pemilik Mahendra Group, perusahaan properti dan logistik yang namanya terpampang di gedung-gedung tinggi Jakarta. Ia bisa memesan makan malam tanpa melihat harga, bepergian tanpa menghitung ongkos, dan menyelesaikan masalah dengan satu panggilan telepon."],
+
+          ["", "Namun, Raka mengaku lelah hidup di tengah orang-orang yang mendekatinya karena nama keluarga. Ia ingin dipercaya sebagai dirinya sendiri. Alena mendengarkan pengakuan itu dengan hati-hati, sebab baginya, kemewahan bukan dosa, tetapi kemewahan juga bukan bukti bahwa seseorang memiliki hati yang baik."],
+
+          ["", "Mereka bertemu lagi seminggu kemudian di sebuah kedai kopi kecil dekat kantor Alena. Raka mengirim pesan lebih dulu, meminta izin untuk bertemu, dan datang tepat waktu. Ia tidak membawa hadiah mahal. Ia hanya membawa dua roti cokelat dari toko di seberang jalan."],
+
+          ["dialog", "“Aku tidak tahu kamu suka kopi apa, jadi aku tidak memesankan apa-apa,” katanya."],
+
+          ["dialog", "“Akhirnya ada orang kaya yang tidak menganggap semua orang menyukai kopi mahal,” jawab Alena."],
+
+          ["dialog", "“Aku anggap itu pujian.”"],
+
+          ["", "Alena tertawa. Tawa yang lepas, yang jarang muncul sejak ayahnya meninggal. Raka memandangnya sejenak, bukan seperti seseorang yang sedang menilai kecantikan, melainkan seperti seseorang yang baru menemukan cahaya di ruangan gelap."],
+
+          ["", "Hari-hari berikutnya diisi percakapan sederhana. Tentang hujan, pekerjaan, film lama, dan impian Alena membuka toko bunga kecil. Raka mengingat hal-hal yang bahkan Alena sendiri lupa pernah ia ceritakan. Pelan-pelan, jarak di antara dua dunia itu terasa tidak terlalu jauh."]
+        ]
+      },
+
+      // HALAMAN 4
+      {
+        title: "Janji di Bawah Lampu Kota",
+        paragraphs: [
+          ["dropcap", "Tiga bulan setelah pertemuan pertama, Raka mengajak Alena berjalan di taman kota setelah makan malam sederhana. Lampu-lampu jalan memantul di permukaan jalan yang masih basah. Di kejauhan, gedung-gedung Jakarta menyala seperti bintang yang jatuh ke bumi."],
+
+          ["", "Alena mengenakan blus krem dan rok hitam yang dibelinya saat diskon. Raka berkata ia terlihat cantik, lalu menambahkan bahwa ia selalu terlihat cantik bahkan ketika rambutnya berantakan karena angin. Alena menyuruhnya berhenti bicara sebelum ia benar-benar tersipu."],
+
+          ["dialog", "“Len, aku tidak bisa menjanjikan hidup tanpa masalah,” kata Raka. “Keluargaku rumit. Pekerjaanku juga. Tapi aku ingin kamu tahu, aku serius mengenalmu.”"],
+
+          ["dialog", "“Aku tidak butuh hidup yang sempurna, Rak. Aku hanya tidak mau dijadikan rahasia atau pilihan kedua.”"],
+
+          ["dialog", "“Kamu bukan pilihan kedua. Kamu orang pertama yang membuatku ingin pulang lebih cepat.”"],
+
+          ["", "Raka menggenggam tangannya, menunggu sampai Alena membalas genggaman itu. Tidak ada cincin, tidak ada musik, tidak ada kerumunan yang bertepuk tangan. Hanya dua orang yang saling memandang di bawah lampu kota, dengan keyakinan muda bahwa kejujuran bisa melindungi mereka dari apa pun."],
+
+          ["", "Malam itu, Raka mengantar Alena sampai gang rumahnya. Ia tidak memaksa masuk. Ia hanya berdiri di depan pagar dan menyapa Bu Ratih yang mengintip dari balik pintu."],
+
+          ["dialog", "“Jaga anak saya baik-baik, Nak,” kata Bu Ratih."],
+
+          ["dialog", "Raka menunduk hormat. “Saya akan berusaha, Bu.”"],
+
+          ["", "Janji itu terdengar tulus. Dan justru karena terdengar tulus, Alena menyimpannya di tempat paling rapuh dalam hatinya."]
+        ]
+      },
+
+      // HALAMAN 5
+      {
+        title: "Sahabat Bernama Nadin",
+        paragraphs: [
+          ["dropcap", "Ada satu orang yang mengetahui seluruh rahasia Alena selain ibunya: Nadin Prameswari, sahabatnya sejak masa SMA. Nadin cantik dengan cara yang berbeda—berani, pandai berdandan, dan selalu tahu bagaimana membuat dirinya diperhatikan. Ia bekerja sebagai staf pemasaran lepas dan kerap mengeluh bahwa hidup tidak pernah memberinya kesempatan yang adil."],
+
+          ["", "Ketika Alena menceritakan tentang Raka, Nadin adalah orang pertama yang berteriak kegirangan. Ia memeluk Alena, meminta foto, lalu bercanda bahwa sahabatnya akhirnya akan keluar dari gang kecil menuju kehidupan seperti drama televisi."],
+
+          ["dialog", "“Jangan-jangan kamu bakal menikah di hotel bintang lima,” goda Nadin."],
+
+          ["dialog", "“Aku bahkan belum tahu dia suka makan apa selain roti cokelat.”"],
+
+          ["dialog", "“Yang penting dia sayang kamu. Dan kalau dia menyakitimu, bilang padaku. Aku yang akan menghabisinya.”"],
+
+          ["", "Mereka tertawa sampai mata berair. Alena percaya pada Nadin tanpa syarat. Ia pernah meminjamkan uang terakhirnya ketika Nadin kesulitan membayar kontrakan, pernah menemaninya di rumah sakit, dan pernah membelanya saat orang-orang membicarakannya di belakang."],
+
+          ["", "Karena itulah Alena tidak curiga ketika Nadin mulai sering menanyakan jadwal Raka, tempat mereka bertemu, dan kebiasaan keluarga Mahendra. Alena menganggap pertanyaan itu sebagai rasa ingin tahu seorang sahabat."],
+
+          ["", "Ia juga tidak menyadari perubahan kecil pada mata Nadin setiap kali Raka menelepon. Senyumnya masih sama, tetapi ada sesuatu yang diam-diam tumbuh di baliknya: iri hati yang lama dipelihara, lalu berubah menjadi keinginan untuk memiliki apa yang dimiliki Alena."],
+
+          ["", "Dan iri hati, bila diberi cukup waktu, dapat menyamar sebagai kasih sayang dengan sangat sempurna."]
+        ]
+      },
+
+      // HALAMAN 6
+      {
+        title: "Pintu yang Mulai Tertutup",
+        paragraphs: [
+          ["dropcap", "Pada bulan keenam hubungan mereka, Raka mulai sulit dihubungi. Pesannya datang semakin singkat. Janji makan malam dibatalkan karena rapat keluarga. Akhir pekan yang dulu mereka habiskan bersama kini dipenuhi alasan tentang urusan perusahaan."],
+
+          ["", "Alena mencoba mengerti. Ia tahu Raka memikul tanggung jawab besar. Ia tidak ingin menjadi perempuan yang menuntut perhatian setiap saat. Namun, ada malam-malam ketika ia menatap layar ponsel hingga tertidur, hanya untuk bangun dan menemukan pesan singkat: Maaf, ketiduran."],
+
+          ["dialog", "“Kamu berubah,” kata Alena saat akhirnya mereka bertemu."],
+
+          ["dialog", "Raka mengusap wajahnya. “Aku sedang menghadapi masalah di kantor. Ayah ingin aku mengambil alih divisi baru.”"],
+
+          ["dialog", "“Kalau kamu tidak baik-baik saja, kamu bisa cerita. Aku tidak harus menyelesaikan semuanya, Rak. Aku cuma ingin ada di sampingmu.”"],
+
+          ["dialog", "“Aku tahu. Maaf kalau akhir-akhir ini aku membuatmu merasa sendirian.”"],
+
+          ["", "Raka memeluknya. Untuk sesaat, Alena merasa semua ketakutannya tidak beralasan. Ia mencium aroma parfum yang sudah dikenalnya, mendengar detak jantung lelaki itu, dan memilih percaya sekali lagi."],
+
+          ["", "Tetapi saat Raka mengantarnya pulang, sebuah notifikasi muncul di layar ponsel yang tergeletak di konsol mobil. Nama pengirimnya hanya tertulis: N."],
+
+          ["", "Pesan itu menghilang sebelum Alena sempat membaca isinya. Raka membalik ponselnya dengan gerakan terlalu cepat, lalu mulai berbicara tentang cuaca."],
+
+          ["", "Alena tidak bertanya. Belum. Ada ketakutan yang lebih besar daripada kebohongan: kemungkinan bahwa firasatnya benar."]
+        ]
+      },
+
+      // HALAMAN 7
+      {
+        title: "Pesan Tengah Malam",
+        paragraphs: [
+          ["dropcap", "Pukul 00.17, ketika hujan mengetuk jendela kamar Alena, ponselnya bergetar. Sebuah pesan masuk dari nomor tak dikenal. Tidak ada salam, tidak ada penjelasan, hanya satu kalimat: Kalau kamu masih percaya Raka, datanglah besok ke Hotel Arunika. Lantai dua belas. Jangan beri tahu siapa pun."],
+
+          ["", "Alena membaca pesan itu berulang kali. Jantungnya berdetak keras. Ia mencoba menelepon nomor tersebut, tetapi panggilannya langsung terputus. Ia mengirim pesan balasan, menanyakan siapa pengirimnya. Tidak ada jawaban."],
+
+          ["", "Sepanjang malam, Alena memikirkan kemungkinan bahwa ini hanya lelucon kejam. Bisa jadi seseorang ingin memeras Raka. Bisa jadi pesaing bisnis keluarganya. Bisa juga seseorang yang ingin menghancurkan hubungan mereka."],
+
+          ["dialog", "“Kenapa kamu belum tidur?” tanya Bu Ratih dari ambang pintu."],
+
+          ["dialog", "Alena buru-buru mematikan layar. “Belum ngantuk, Bu. Banyak kerjaan.”"],
+
+          ["dialog", "“Jangan simpan semua masalah sendirian. Wajahmu tidak bisa berbohong kepada Ibu.”"],
+
+          ["", "Alena ingin bercerita, tetapi ia tidak memiliki bukti. Ia takut membuat ibunya khawatir untuk sesuatu yang mungkin tidak nyata. Maka ia hanya tersenyum dan berkata semuanya baik-baik saja."],
+
+          ["", "Pagi harinya, ia berangkat lebih awal. Di dalam bus yang penuh sesak, ia menggenggam ponsel erat-erat. Hotel Arunika berada tidak jauh dari pusat kota, tempat yang sering ia lihat dari luar tetapi tak pernah punya alasan untuk dimasuki."],
+
+          ["", "Pada pukul sebelas, Alena berdiri di lobi hotel dengan telapak tangan dingin. Ia belum tahu bahwa langkah kecil menuju lift itu akan membelah hidupnya menjadi dua: kehidupan sebelum mengetahui kebenaran, dan kehidupan setelahnya."]
+        ]
+      },
+
+      // HALAMAN 8
+      {
+        title: "Di Balik Pintu Kamar",
+        paragraphs: [
+          ["dropcap", "Lift terbuka di lantai dua belas. Koridornya sunyi, beraroma bunga lili dan pembersih lantai. Alena menemukan nomor kamar yang disebutkan dalam pesan. Pintu kamar itu tidak tertutup rapat. Dari celahnya terdengar tawa perempuan, disusul suara lelaki yang sangat ia kenal."],
+
+          ["", "Ia mendorong pintu perlahan. Dunia seakan kehilangan suara. Di dalam kamar, Raka berdiri dekat jendela dengan kemeja terbuka di bagian kerah. Di sofa, Nadin duduk mengenakan gaun merah marun, satu tangan menyentuh lengan Raka seolah itu tempat yang paling wajar baginya."],
+
+          ["", "Mereka tidak sedang berciuman ketika Alena masuk. Tidak perlu. Kedekatan mereka, cara Raka memandang Nadin, dan cara Nadin tersenyum sudah cukup untuk menjelaskan sesuatu yang selama ini berusaha disangkal Alena."],
+
+          ["dialog", "“Alena?” Raka membeku. “Kamu ngapain di sini?”"],
+
+          ["dialog", "Alena menatapnya, lalu menatap Nadin. “Aku yang seharusnya bertanya. Kalian sedang apa?”"],
+
+          ["dialog", "Nadin berdiri dengan tenang, merapikan gaunnya. “Len, dengar dulu. Ini tidak sesederhana yang kamu pikirkan.”"],
+
+          ["dialog", "“Kalau begitu jelaskan. Aku sedang mendengarkan.”"],
+
+          ["dialog", "Raka melangkah mendekat. “Aku bisa menjelaskan. Tolong, jangan membuat kesimpulan sekarang.”"],
+
+          ["", "Alena mundur ketika tangan Raka hendak menyentuhnya. Untuk pertama kalinya, sentuhan yang dahulu membuatnya merasa aman kini terasa seperti ancaman terhadap sisa harga dirinya."],
+
+          ["", "Ia memandang dua orang yang paling ia percaya. Di antara mereka, Alena tidak menemukan rasa bersalah yang utuh. Ia hanya menemukan keterkejutan karena rahasia mereka akhirnya memiliki saksi."]
+        ]
+      },
+
+      // HALAMAN 9
+      {
+        title: "Pengkhianatan Dua Wajah",
+        paragraphs: [
+          ["dropcap", "“Sejak kapan?” Suara Alena terdengar kecil, tetapi setiap katanya seperti pecahan kaca. “Sejak kapan kalian melakukan ini di belakangku?”"],
+
+          ["", "Nadin menunduk sebentar. Raka diam. Keheningan mereka menjadi jawaban yang jauh lebih kejam daripada pengakuan."],
+
+          ["dialog", "“Alena, aku tidak pernah berniat menyakitimu,” kata Raka akhirnya."],
+
+          ["dialog", "Alena tertawa tanpa kegembiraan. “Kalimat itu selalu diucapkan orang setelah mereka memilih untuk menyakiti.”"],
+
+          ["dialog", "Nadin menyilangkan tangan. “Aku tidak ingin merebut siapa pun darimu. Raka yang datang kepadaku. Dia bilang hubungan kalian sudah tidak berjalan baik.”"],
+
+          ["dialog", "“Kamu sahabatku, Nad.”"],
+
+          ["dialog", "“Dan aku juga manusia yang punya perasaan!” balas Nadin, suaranya meninggi. “Kamu selalu mendapatkan hal-hal baik, Len. Semua orang menyukaimu. Kamu cantik, kamu baik, bahkan saat hidupmu susah orang masih menganggapmu istimewa. Sekali saja, apa salahnya aku memilih sesuatu untuk diriku sendiri?”"],
+
+          ["", "Alena memandangnya seolah sedang melihat orang asing memakai wajah sahabatnya. Ia teringat semua malam ketika mereka berbagi rahasia, semua janji untuk saling melindungi, dan semua uang yang pernah ia berikan tanpa meminta kembali."],
+
+          ["dialog", "“Kamu tidak memilih sesuatu untuk dirimu sendiri,” bisik Alena. “Kamu memilih menghancurkan seseorang yang percaya kepadamu.”"],
+
+          ["", "Raka mencoba menyela, tetapi Alena mengangkat tangan. Ia tidak ingin mendengar alasan yang disusun untuk membuat pengkhianatan tampak seperti kesalahan kecil."],
+
+          ["", "Ia melepas gelang tipis pemberian Raka, meletakkannya di meja, lalu berjalan keluar. Di lorong hotel, ia terus melangkah sampai pintu lift tertutup. Baru ketika sendirian, air matanya jatuh tanpa bisa dihentikan."]
+        ]
+      },
+
+      // HALAMAN 10
+      {
+        title: "Hancur di Tengah Kota",
+        paragraphs: [
+          ["dropcap", "Kota tetap bergerak ketika hati Alena runtuh. Kendaraan saling mendahului, pedagang menawarkan dagangan, dan orang-orang menatap layar ponsel mereka. Tidak seorang pun tahu bahwa seorang perempuan sedang berusaha mengingat bagaimana caranya bernapas."],
+
+          ["", "Ia duduk di halte selama hampir satu jam. Ponselnya terus bergetar. Raka menelepon berkali-kali, lalu mengirim pesan panjang yang meminta kesempatan menjelaskan. Nadin mengirim satu pesan singkat: Maaf kalau kamu terluka. Aku tidak pernah merencanakan semuanya seperti ini."],
+
+          ["", "Alena membaca pesan itu sampai huruf-hurufnya kabur. Permintaan maaf yang tidak menyebutkan tanggung jawab terasa seperti pintu yang hanya dibuka setengah, cukup untuk memperlihatkan penyesalan tetapi tidak cukup untuk menerima akibat."],
+
+          ["dialog", "“Mbak, mau beli tisu?” seorang anak kecil menawarkan sebungkus tisu dari pinggir halte."],
+
+          ["", "Alena mengangguk dan membayar lebih dari harga yang diminta. Anak itu tersenyum lalu berlari kembali ke ibunya. Kebaikan kecil dari orang asing itu membuat tangis Alena semakin deras."],
+
+          ["", "Malamnya, ia pulang dengan wajah pucat. Bu Ratih langsung menyadari ada sesuatu yang salah. Alena berusaha menjawab bahwa ia lelah, tetapi ketika ibunya memeluknya, seluruh pertahanan yang ia bangun sepanjang hari runtuh."],
+
+          ["dialog", "“Ibu, apa aku kurang baik? Apa aku tidak cukup?”"],
+
+          ["dialog", "Bu Ratih memegang wajah putrinya. “Dengar Ibu. Pengkhianatan seseorang bukan ukuran nilai dirimu. Orang yang melukai kamu telah membuat pilihan. Jangan biarkan pilihan mereka menentukan siapa kamu.”"],
+
+          ["", "Alena menangis di pangkuan ibunya seperti anak kecil yang kehilangan jalan pulang. Di luar, hujan kembali turun, seolah langit mengulang adegan yang pernah mempertemukan mereka—hanya kali ini tidak ada lelaki yang datang membawa payung."]
+        ]
+      },
+
+      // HALAMAN 11
+      {
+        title: "Harga Sebuah Kepercayaan",
+        paragraphs: [
+          ["dropcap", "Tiga hari setelah kejadian di hotel, sebuah amplop cokelat tiba di kantor Alena. Di dalamnya terdapat salinan dokumen transaksi dan foto-foto yang menunjukkan bahwa Raka telah memakai nama Alena untuk menghubungkan sebuah rekening dengan proyek investasi kecil milik perusahaan keluarganya."],
+
+          ["", "Alena tidak pernah menandatangani dokumen itu. Ia mengenali tanda tangan yang menyerupai miliknya, tetapi bukan goresan tangannya. Ketika ia menghubungi Raka, lelaki itu menjawab dengan suara dingin yang tak pernah ia dengar sebelumnya."],
+
+          ["dialog", "“Kamu harus berhenti menghubungiku, Len. Situasinya sudah rumit.”"],
+
+          ["dialog", "“Ada dokumen atas namaku. Aku tidak pernah menyetujuinya. Apa yang kamu lakukan?”"],
+
+          ["dialog", "“Jangan membesar-besarkan masalah. Itu hanya formalitas. Aku akan mengurusnya.”"],
+
+          ["dialog", "“Kamu menggunakan namaku tanpa izin?”"],
+
+          ["", "Raka terdiam cukup lama. Lalu ia berkata bahwa Alena tidak memahami dunia bisnis dan sebaiknya tidak ikut campur. Kalimat itu menampar lebih keras daripada bentakan. Lelaki yang dulu memuji keteguhan Alena kini menggunakan kesederhanaan hidupnya untuk membuatnya merasa bodoh."],
+
+          ["", "Sore itu, Alena meminta bantuan seorang kenalan di bagian administrasi untuk memahami dokumen tersebut. Ia belum tahu seluruh konsekuensinya, tetapi ia tahu satu hal: ia harus menyimpan semua bukti, tidak menandatangani apa pun, dan mencari nasihat hukum sebelum bertindak."],
+
+          ["", "Ia memotret setiap halaman, menyimpan pesan, dan menuliskan tanggal kejadian. Untuk pertama kalinya sejak dikhianati, ia berhenti bertanya mengapa mereka melakukan ini kepadanya. Ia mulai bertanya apa yang harus ia lakukan agar tidak semakin terluka."]
+        ]
+      },
+
+      // HALAMAN 12
+      {
+        title: "Ibu yang Jatuh Sakit",
+        paragraphs: [
+          ["dropcap", "Saat Alena mulai mencoba berdiri kembali, hidup memberinya pukulan lain. Bu Ratih jatuh pingsan di depan gerobak nasi uduk pada suatu pagi. Tetangga membantu membawanya ke klinik, lalu dokter menyarankan pemeriksaan lanjutan di rumah sakit."],
+
+          ["", "Alena berlari dari kantor dengan napas tersengal. Di ruang tunggu, ia mendapati ibunya berbaring lemah, wajahnya pucat, dan selang infus menempel di tangan. Tagihan pemeriksaan membuat kepala Alena berputar. Tabungan mereka tidak banyak, sedangkan biaya hidup tetap berjalan."],
+
+          ["dialog", "“Ibu tidak apa-apa, Len. Jangan menangis,” bisik Bu Ratih."],
+
+          ["dialog", "“Ibu harus sembuh. Kita masih punya banyak hal yang belum dilakukan bersama.”"],
+
+          ["dialog", "“Kamu harus tetap hidup untuk dirimu sendiri, Nak. Jangan habiskan seluruh hidupmu untuk membuktikan sesuatu kepada orang lain.”"],
+
+          ["", "Alena menggenggam tangan ibunya dan berjanji akan mengurus semuanya. Ia menghubungi saudara, meminta izin cuti, dan mengambil pekerjaan tambahan yang bisa dilakukan dari rumah. Malam-malamnya berubah menjadi rangkaian hitungan: biaya obat, uang sewa, kebutuhan makan, dan cicilan kecil yang tak bisa ditunda."],
+
+          ["", "Dalam kesunyian koridor rumah sakit, ia menerima pesan dari nomor tak dikenal. Pesan itu hanya berisi foto Raka dan Nadin menghadiri acara makan malam keluarga, berdiri berdampingan seolah dunia tidak pernah menuntut mereka membayar apa pun."],
+
+          ["", "Alena mematikan layar. Ia tidak punya tenaga untuk membenci mereka malam itu. Ia hanya duduk di samping ranjang ibunya dan mendengarkan bunyi alat monitor yang teratur, berusaha percaya bahwa masih ada sesuatu di dunia yang bisa bertahan."]
+        ]
+      },
+
+      // HALAMAN 13
+      {
+        title: "Malam Ketika Ia Berubah",
+        paragraphs: [
+          ["dropcap", "Bu Ratih akhirnya melewati masa kritis, tetapi dokter meminta agar ia beristirahat dan menjalani pemeriksaan rutin. Alena pulang ke rumah menjelang tengah malam untuk mengambil pakaian bersih. Gang kecil itu terasa asing. Setiap sudut menyimpan kenangan tentang perempuan yang dulu percaya bahwa cinta akan membuat hidup lebih mudah."],
+
+          ["", "Di kamarnya, Alena menemukan kotak kecil tempat ia menyimpan barang-barang dari Raka. Tiket bioskop pertama mereka, foto dari mesin foto otomatis, dan secarik kertas tempat Raka menulis: Aku ingin menjadi tempat pulangmu. Ia membaca kalimat itu sekali, lalu melipatnya dengan tangan gemetar."],
+
+          ["", "Ia tidak membakar barang-barang itu. Ia memasukkannya kembali ke dalam kotak dan menutup rapat-rapat. Melupakan bukan sesuatu yang bisa diperintahkan. Namun, ia bisa berhenti membiarkan kenangan memutuskan langkahnya."],
+
+          ["dialog", "“Aku tidak akan menjadi seperti mereka,” ucapnya pada pantulan dirinya di kaca."],
+
+          ["", "Kalimat itu terdengar rapuh, tetapi untuk pertama kalinya ia tidak mengucapkannya sambil menangis. Ia membuka laptop tua, menyusun dokumen, mencatat tanggal, menyimpan salinan percakapan, dan menuliskan daftar hal yang perlu ia pahami sebelum mengambil tindakan."],
+
+          ["", "Ia akan mencari bantuan yang tepat. Ia akan melindungi ibunya. Ia akan membersihkan namanya jika memang ada yang menyalahgunakannya. Dan jika kebenaran menunjukkan bahwa Raka dan Nadin telah merugikannya, ia tidak akan menutupinya hanya demi menjaga nama baik orang-orang yang pernah ia cintai."],
+
+          ["", "Dendam mulai tumbuh di dalam dirinya, tetapi belum berupa keinginan untuk menghancurkan siapa pun. Ia lebih mirip bara kecil: tekad untuk tidak lagi diam, tidak lagi mudah dimanipulasi, dan tidak lagi menyerahkan hidupnya kepada orang yang menganggap kepercayaannya sebagai kelemahan."],
+
+          ["", "Malam itu, Alena menghapus pesan-pesan cinta dari layar utama ponselnya. Bukan karena ia sudah tidak sakit, melainkan karena ia ingin memilih sendiri apa yang akan ia lihat ketika bangun esok hari."]
+        ]
+      },
+
+      // HALAMAN 14
+      {
+        title: "Nama yang Harus Dibersihkan",
+        paragraphs: [
+          ["dropcap", "Keesokan harinya, Alena menghubungi layanan konsultasi hukum dan menjelaskan persoalannya setenang mungkin. Ia membawa salinan dokumen, bukti pesan, serta kronologi yang disusunnya. Ia diberi tahu agar tidak menuduh siapa pun di ruang publik sebelum fakta diperiksa, tidak menghapus bukti, dan meminta klarifikasi tertulis melalui jalur yang tepat."],
+
+          ["", "Langkah itu tidak terasa dramatis seperti adegan balas dendam dalam film. Tidak ada musik megah atau kalimat tajam yang membuat semua orang terdiam. Hanya formulir, waktu tunggu, dan pertanyaan-pertanyaan yang harus dijawab dengan jujur. Namun, untuk Alena, itulah awal dari kendali yang kembali ia pegang."],
+
+          ["", "Di kantor, ia juga mulai menjaga jarak dari orang-orang yang ingin tahu urusan pribadinya. Ia tidak menceritakan semuanya kepada siapa pun. Ia belajar bahwa tidak setiap orang yang bertanya benar-benar ingin menolong; sebagian hanya ingin memiliki cerita untuk dibawa ke meja makan."],
+
+          ["dialog", "“Kamu sekarang berbeda,” kata rekan kerjanya, Mira, saat mereka makan siang."],
+
+          ["dialog", "“Mungkin aku baru sadar bahwa baik hati tidak sama dengan membiarkan orang melewati batas.”"],
+
+          ["dialog", "Mira mengangguk pelan. “Kalau kamu butuh teman untuk menemani urusan administrasi, bilang saja. Kamu tidak harus menyelesaikan semuanya sendirian.”"],
+
+          ["", "Alena menerima tawaran itu dengan mata berkaca-kaca. Ia hampir lupa bahwa tidak semua orang akan mengkhianatinya. Masih ada orang-orang yang menawarkan bantuan tanpa meminta bagian dari hidupnya sebagai imbalan."],
+
+          ["", "Ia belum tahu seberapa jauh perkara dokumen itu akan membawanya. Tetapi satu hal kini jelas: ia tidak akan membalas kebohongan dengan kebohongan. Jika ia ingin menang, ia harus tetap berdiri di sisi kebenaran—meskipun jalannya lebih panjang."]
+        ]
+      },
+
+      // HALAMAN 15
+      {
+        title: "Awal dari Dendam",
+        paragraphs: [
+          ["dropcap", "Malam sebelum gala, Alena berdiri di depan cermin kecil di kamar. Ia mengenakan blus putih sederhana, rambutnya diikat rapi, dan wajahnya tampak lebih tenang daripada beberapa minggu sebelumnya. Luka itu masih ada. Ia masih mengingat suara Raka di kamar hotel, senyum Nadin, dan janji yang pernah membuatnya merasa aman. Tetapi ingatan tidak lagi menjadi satu-satunya hal yang menguasai dirinya."],
+
+          ["", "Di meja, tersusun salinan dokumen yang sudah ia rapikan, daftar pertanyaan untuk konsultasi berikutnya, serta catatan tentang orang-orang yang mungkin dapat membantu menjelaskan alur transaksi. Tidak ada rencana untuk mempermalukan seseorang di depan umum. Tidak ada niat merusak hidup orang lain dengan rumor. Alena ingin kebenaran, perlindungan bagi ibunya, dan kesempatan untuk membangun kembali hidupnya."],
+
+          ["dialog", "“Kamu akan baik-baik saja, Len,” bisiknya pada diri sendiri."],
+
+          ["", "Ia tidak sepenuhnya percaya pada kalimat itu. Tetapi kali ini, ia tidak menunggu orang lain datang untuk meyakinkannya."],
+
+          ["", "Ponselnya menyala. Sebuah pesan baru masuk dari nomor tak dikenal yang sama seperti malam ketika ia menerima petunjuk menuju hotel. Hanya ada satu kalimat: Jangan percaya pada cerita yang akan kamu dengar besok. Raka bukan satu-satunya orang yang menyembunyikan sesuatu."],
+
+          ["", "Alena membaca pesan itu dua kali. Jantungnya kembali berdegup kencang. Siapa pengirimnya? Apa yang sebenarnya terjadi di balik hubungan Raka dan Nadin? Dan bagaimana namanya bisa terlibat dalam dokumen yang tak pernah ia tandatangani?"],
+
+          ["", "Ia meletakkan ponsel, menarik napas panjang, lalu mematikan lampu kamar. Besok, ia mungkin akan bertemu orang-orang yang ingin menganggap dirinya kecil, mudah dibohongi, dan tidak berdaya. Mereka belum tahu bahwa perempuan yang mereka lukai sedang belajar berdiri tanpa meminta izin."],
+
+          ["", "Alena Kirana Putri pernah percaya bahwa cinta adalah tempat pulang. Kini ia tahu, terkadang seseorang harus kehilangan rumahnya agar belajar membangun pintu sendiri."],
+
+          ["scene", "Dan ketika fajar menyentuh atap-atap sederhana di ujung gang itu, babak pertama dari kehancurannya berakhir—sementara kisah balas dendamnya baru saja dimulai."]
+        ]
+      }
+
+    ];
+
+    let currentPage = 0;
+
+    const storyEl = document.getElementById("story");
+    const titleEl = document.getElementById("pageTitle");
+    const labelEl = document.getElementById("chapterLabel");
+    const counterEl = document.getElementById("pageCounter");
+    const percentEl = document.getElementById("percent");
+    const barEl = document.getElementById("progressBar");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const pageJump = document.getElementById("pageJump");
+    const endNote = document.getElementById("endNote");
+
+    function renderPage() {
+      const page = pages[currentPage];
+
+      titleEl.textContent = page.title;
+
+      labelEl.textContent =
+        `Chapter 1 · Halaman ${currentPage + 1}`;
+
+      counterEl.textContent =
+        `Halaman ${currentPage + 1} dari ${pages.length}`;
+
+      const progress = Math.round(
+        ((currentPage + 1) / pages.length) * 100
+      );
+
+      percentEl.textContent = `${progress}% terbaca`;
+      barEl.style.width = `${progress}%`;
+
+      storyEl.replaceChildren();
+
+      page.paragraphs.forEach(([kind, text]) => {
+        const p = document.createElement("p");
+
+        p.textContent = text;
+
+        if (kind) {
+          p.className = kind;
+        }
+
+        storyEl.appendChild(p);
+      });
+
+      prevBtn.disabled = currentPage === 0;
+
+      nextBtn.textContent =
+        currentPage === pages.length - 1
+          ? "Chapter 1 Selesai ✓"
+          : "Halaman Selanjutnya →";
+
+      nextBtn.disabled =
+        currentPage === pages.length - 1;
+
+      endNote.hidden =
+        currentPage !== pages.length - 1;
+
+      [...pageJump.children].forEach((btn, i) => {
+        btn.classList.toggle(
+          "active",
+          i === currentPage
+        );
+
+        btn.setAttribute(
+          "aria-current",
+          i === currentPage ? "page" : "false"
+        );
+      });
+
+      document.querySelector(".reader").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    // Membuat tombol nomor halaman 1 sampai 15
+    pages.forEach((page, i) => {
+      const btn = document.createElement("button");
+
+      btn.type = "button";
+      btn.textContent = i + 1;
+
+      btn.setAttribute(
+        "aria-label",
+        `Buka halaman ${i + 1}`
+      );
+
+      btn.addEventListener("click", () => {
+        currentPage = i;
+        renderPage();
+      });
+
+      pageJump.appendChild(btn);
+    });
+
+    // Tombol halaman sebelumnya
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 0) {
+        currentPage--;
+        renderPage();
+      }
+    });
+
+    // Tombol halaman selanjutnya
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        renderPage();
+      }
+    });
+
+    // Navigasi menggunakan tombol panah keyboard
+    document.addEventListener("keydown", e => {
+      if (
+        e.key === "ArrowRight" &&
+        currentPage < pages.length - 1
+      ) {
+        currentPage++;
+        renderPage();
+      }
+
+      if (
+        e.key === "ArrowLeft" &&
+        currentPage > 0
+      ) {
+        currentPage--;
+        renderPage();
+      }
+    });
+
+    // Menampilkan halaman pertama saat website dibuka
+    renderPage();
+  </script>
+</body>
+</html>
